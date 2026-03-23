@@ -1,3 +1,42 @@
+//Exercício 1 – Psicólogo
+ 
+function avaliarSessao(nomePaciente, quantidadeSessoes){
+ console.log("Paciente",nomePaciente);
+ if(quantidadeSessoes >= 10){
+    return true
+ }else{
+    return false
+ }
+}
+ 
+let resultado1 = avaliarSessao("Maria", 12);
+console.log("Pode receber alta", resultado1);
+ 
+let resultado2 = avaliarSessao("Maria", 5);
+console.log("Não pode receber alta", resultado2);
+
+//Exercicio 2 - Bolo de pote
+ 
+const calcularValorPedido = (quantidadeBolos, valorUnitario) => {
+    let total = quantidadeBolos * valorUnitario;
+ 
+    if (quantidadeBolos >= 10) {
+        total = total * 0.9;
+    }
+ 
+    return total;
+};
+
+//exercicio 3- Atelie
+function listarMateriais(materiais){
+    console.log(materiais.length);
+    let novoMaterial = materiais.map(material => material.toUpperCase());
+    return novoMaterial;
+}
+let materiais = ["tinta" , "pinceis", "tecidos"];
+let resultado = listarMateriais(materiais);
+console.log("Materiais em maiúsculas:", resultado);
+
 // Exercício 4 - Confeitaria
 function filtrarSaboresDisponiveis(sabores, letra) {
   return sabores.filter((sabor) => 
@@ -21,14 +60,25 @@ const meusSabores = [
 console.log("Exercício 4 - Confeitaria");
 
 const resultadoB = filtrarSaboresDisponiveis(meusSabores, "B");
-console.log("Sabores com a letra 'B':", resultadoB);
-
 const resultadoC = filtrarSaboresDisponiveis(meusSabores, "C");
-console.log("Sabores com a letra 'C':", resultadoC);
-
 const resultadoZ = filtrarSaboresDisponiveis(meusSabores, "Z");
-console.log("Todos os Sabores:", meusSabores);
 console.log("\n");
+
+//Exercício 5 – Psicólogo JSON - INVALIDO
+ 
+ 
+const cadastroPaciente = `{
+ 
+"nomeCompleto": "Ana Silva",
+  "idade": 28,
+  "planoDeSaude": true,
+  "queixasPrincipais": ["dor nas costas", "insônia", "estresse"],
+  "ultimaSessao": {
+   data: new Date().toISOString(),
+    "escalaHumor": 7,
+    "prescricaoAtividade": true
+   
+}`;
 
 // Exercício 6 - Ateliê de Costura
 const pedidosAtelie = [
@@ -105,3 +155,38 @@ console.log(pedidoBolo);
 
 console.table(pedidoBolo.catalogo);
 console.log("\n");
+
+// Exercício 8 - Confeitaria
+const pedido = {
+  "identificadorPedido": "00001",
+  "dataPedido": "2026-03-23 11:45:14",
+  "cliente": {
+    "nome": "Mariana Silva",
+    "email": "mariana.silva@email.com"
+  },
+  "itens": [
+    {
+      "produto": "Bolo Brigadeiro",
+      "quantidade": 1,
+      "observacoes": "Escrever 'Parabéns'"
+    },
+    {
+      "produto": "Bolo Maracujá",
+      "quantidade": 12,
+      "observacoes": "Embalar para presente."
+    }
+  ],
+  "enderecoEntrega": {
+    "rua": "Avenida das Tulipas",
+    "numero": "1540",
+    "bairro": "Jardim das Flores",
+    "cidade": "São Paulo",
+    "cep": "04578-000"
+  },
+  "formaPagamento": "pix",
+  "totalCalculado": 185.50
+};
+console.log("Exercício 8 - Confeitaria");
+console.log("Pedido Recebido:", pedido);
+
+console.log(JSON.stringify(pedido, null, 2));
