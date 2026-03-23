@@ -186,6 +186,7 @@ const pedido = {
   "formaPagamento": "pix",
   "totalCalculado": 185.50
 };
+
 console.log("Exercício 8 - Confeitaria");
 console.log("Pedido Recebido:", pedido);
 
